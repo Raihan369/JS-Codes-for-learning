@@ -1,16 +1,22 @@
-/** Problem -02 ( Cycle or Laptop ) */
-var money = 10000;
-//write your code here
+// Problem-02
+function  onlyCharacter( str ) 
+{
+     if (typeof str !== "string")  
+        {
+            return "Invalid";
 
-if(money>=25000)
-{
-    console.log("Laptop");
+        }   
+        else
+        {
+            return str.split(/\s+/).join("").toUpperCase();
+        }
 }
-else if (money>=10000)
-{
-    console.log("Cycle");
-}
-else 
-{
-    console.log("Chocolate");
-}
+
+// console.log(onlyCharacter("  h e llo wor   ld"));
+// console.log(onlyCharacter("Cy   bar- At  tac k  "));
+// console.log(onlyCharacter(" ha ck m e 1 @ru.c  n  "));
+// console.log(onlyCharacter("Serv er : : Do wn"));
+// console.log(onlyCharacter(["hack", "me"]));
+// console.log(onlyCharacter(true));  
+
+

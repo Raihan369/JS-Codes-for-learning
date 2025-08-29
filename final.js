@@ -1,90 +1,114 @@
-/** Problem -01 ( Divide the Asset ) */
-var area = 800;
-//write your code here
-
-var aset = area/2 ;
-
-console.log(aset);
-
-/** Problem -02 ( Cycle or Laptop ) */
-var money = 10000;
-//write your code here
-
-if(money>=25000)
-{
-    console.log("Laptop");
-}
-else if (money>=10000)
-{
-    console.log("Cycle");
-}
-else 
-{
-    console.log("Chocolate");
-}
-
-/** Problem -03 ( Medicine Planner ) */
-var lastDay = 11 ;
-//write your code here
-
-for(let day = 1;day<=lastDay; day++)
-{
-    if(day%3===0)
+// Problem-01
+function totalFine( fare ) {
+          
+    if(typeof fare != "number" || fare<=0 )
     {
-        console.log(`${day} - medicine`);
+        return "Invalid";
     }
-    else
+    else 
     {
-        console.log(`${day} - rest`);
+        return fare + (fare * 0.2) + 30;
     }
 }
 
-/** Problem 04 - (Delete / Store) */
-var fileName= "pdfData.jpg";
-// var fileName = "result.pdf";  
-// var fileName = "data.docx";
-// var fileName = "#exp.mp4";  
-// var fileName = "docx.txt";  
-// var fileName = "docx.xpdf";  
-// var fileName = "slipdf.txt"; 
-//write your code here
-
-if(fileName.includes("#")||fileName.endsWith(".pdf")||fileName.endsWith(".docx"))
+// Problem-02
+function  onlyCharacter( str ) 
 {
-    console.log("Store");
+     if (typeof str !== "string")  
+        {
+            return "Invalid";
 
-}
-else
-{
-    console.log("Delete");
+        }   
+        else
+        {
+            return str.split(/\s+/).join("").toUpperCase();
+        }
 }
 
-
-/** Problem 05 - ( PH Email Generator )  */
-var student= { name: "jhankar" , roll: 1014 ,department: "cse" };
-// var student = { name: "monu", roll: 99, department: "cse" };
-// var student = { name: "mewo" , roll: 96 ,department: "cse"  };
-//write your code here
-
-var email= student.name + student.roll + "." + student.department + "@ph.ac.bd";
-
-console.log(email);
-
-
-/** Problem 06 :  (Current Salary )  */
-var experience = 30;
-var startingSalary = 45000;
-// var experience = 3;
-// var startingSalary = 15000;
-// var experience = 40;
-// var startingSalary = 30000;
-
-//write your code here
-for(let i=1 ; i<=experience ; i++)
+// Problem_03
+function  bestTeam( player1, player2 ) 
 {
-    startingSalary += startingSalary*0.05 ;
+          if (typeof player1 != "object" || typeof player2 != "object" || player1 === null || player2 === null || Array.isArray(player1) || Array.isArray(player2))  
+          {
+              return "Invalid";
+          }
+
+          let total1 = player1.foul + player1.cardY + player1.cardR;
+          let total2 = player2.foul + player2.cardY + player2.cardR;
+
+          if(total1< total2)
+          {
+            return player1.name;
+          }
+          else if(total1 > total2)
+          {
+            return player2.name;
+          }
+          else
+          {
+            return "Tie";
+          }
 }
 
-var currentSalary = startingSalary.toFixed(2);
+// Problem-04
+function  isSame(arr1 , arr2 )
+ {
+         if(!Array.isArray(arr1) || !Array.isArray(arr2))
+         {
+            return "Invalid";
 
-console.log(currentSalary);
+         }
+
+         if(arr1.length !== arr2.length)
+         {
+            return false;
+         }
+
+         for(let i=0 ; i<arr1.length ;i++)
+         {
+            if(arr1[i] !== arr2[i])
+            {
+                return false;
+            }
+         }
+
+         return true;
+ }
+
+ // Problem-05
+function  resultReport( marks ) 
+{
+    if(!Array.isArray(marks))
+    {
+        return  "Invalid";
+
+    }
+
+    if(marks.length === 0)
+    {
+        return { finalScore: 0, pass: 0, fail: 0 };
+
+    }
+
+    let passCount = 0;
+    let failCount =0;
+    let total = 0;
+
+    for(let i=0;i<marks.length;i++)
+    {
+        total += marks[i];
+        if(marks[i]>=40)
+        {
+            passCount++;
+        }
+        else
+        {
+            failCount++;
+        }
+    }
+
+    let avg = Math.round(total / marks.length);
+
+    return { finalScore: avg, pass: passCount, fail: failCount };
+
+}

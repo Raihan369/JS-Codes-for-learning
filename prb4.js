@@ -1,19 +1,34 @@
-/** Problem 04 - (Delete / Store) */
-var fileName= "pdfData.jpg";
-// var fileName = "result.pdf";  
-// var fileName = "data.docx";
-// var fileName = "#exp.mp4";  
-// var fileName = "docx.txt";  
-// var fileName = "docx.xpdf";  
-// var fileName = "slipdf.txt"; 
-//write your code here
+// Problem-04
+function  isSame(arr1 , arr2 )
+ {
+         if(!Array.isArray(arr1) || !Array.isArray(arr2))
+         {
+            return "Invalid";
 
-if(fileName.includes("#")||fileName.endsWith(".pdf")||fileName.endsWith(".docx"))
-{
-    console.log("Store");
+         }
 
-}
-else
-{
-    console.log("Delete");
-}
+         if(arr1.length !== arr2.length)
+         {
+            return false;
+         }
+
+         for(let i=0 ; i<arr1.length ;i++)
+         {
+            if(arr1[i] !== arr2[i])
+            {
+                return false;
+            }
+         }
+
+         return true;
+ }
+
+
+//  console.log(isSame([1, 2, 3], [1, 2, 3]));         
+// console.log(isSame([34, 5, 7, 9], [34, 5, 7]));    
+// console.log(isSame([1, undefined, 3], [1, null, 3])); 
+// console.log(isSame([1 , 4 , 5], [1 , 4 , 5])); 
+// console.log(isSame([1, "4", 4], [1, 4, 4]));       
+// console.log(isSame([2, 5, 6], 256));               
+// console.log(isSame({ data: [2, 5, 6] }, [2, 5, 6]));  
+

@@ -1,24 +1,38 @@
-const sentence = "I am learning web dev";
+//using unshift
+const num =[12,15,13,99,27];
 
-// let reverse = '';
-// for(const letter of sentence)
+const reversed =[];
+
+// for(let i=0 ;i<num.length;i++)
 // {
-//     reverse = letter + reverse;
-// }
-// console.log(reverse);
-
-
-//another way solve
-
-// let rev ='';
-
-// for(let i=0; i<sentence.length; i++)
-// {
-//     const letter = sentence[i];
-//     rev = letter + rev;
+//     console.log(num[i]);
+//     reversed.unshift(num[i]); ///element ashle takee prothome add kore...
 // }
 
-// console.log(rev);
+// console.log(reversed);
 
-console.log(sentence.split('').reverse().join('')); // using built-in methods
-console.log(sentence.split('').reverse() ); //reverse() func work in only array 
+//using push
+
+// for(let i=num.length-1;i>=0;i--)
+// {
+//     reversed.push(num[i]); //element ashle last e add kore...
+// }
+
+// console.log(reversed);
+
+//using for
+
+// for(const nums of num )
+// {
+//     reversed.unshift(nums);
+// }
+// console.log(reversed);
+
+//using built in 
+
+// console.log(num.reverse());
+
+
+// for string 
+const strong = "I am strong";
+console.log(strong.split('').reverse().join("")); //split to array, reverse and join to string
